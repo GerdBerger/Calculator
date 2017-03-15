@@ -17,7 +17,7 @@ public class CalculatorUnitTest {
 
     @Test
     public void testDoSubtraction() {
-        int result = Calculations.doSubraction(7, 2);
+        int result = Calculations.doSubtraction(7, 2);
         assertEquals(5, result);
     }
 

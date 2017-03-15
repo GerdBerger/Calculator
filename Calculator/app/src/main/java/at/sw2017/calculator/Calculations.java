@@ -10,18 +10,22 @@ public class Calculations {
     }
 
     static int doAddition(int firstNumber, int secondNumber) {
-        return 0;
+        return firstNumber + secondNumber;
     }
 
     static int doSubtraction(int firstNumber, int secondNumber) {
-        return 0;
+        return firstNumber - secondNumber;
     }
 
     static int doMultiplication(int firstNumber, int secondNumber) {
-        return 0;
+        return firstNumber * secondNumber;
     }
 
     static int doDivision(int firstNumber, int secondNumber) {
-        return 0;
+        if (secondNumber == 0) {
+            return 0;
+        }
+
+        return firstNumber / secondNumber;
     }
 }
