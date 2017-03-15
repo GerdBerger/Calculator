@@ -25,12 +25,17 @@ public class Calculator extends Activity implements View.OnClickListener {
 
         Button buttonAdd = (Button)findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(this);
-        Button buttonSubtract = (Button)findViewById(R.id.buttonSub);
-        buttonSubtract.setOnClickListener(this);
-        Button buttonMultiply = (Button)findViewById(R.id.buttonMul);
-        buttonMultiply.setOnClickListener(this);
-        Button buttonDivide = (Button)findViewById(R.id.buttonDiv);
-        buttonDivide.setOnClickListener(this);
+        Button buttonSub = (Button)findViewById(R.id.buttonSub);
+        buttonSub.setOnClickListener(this);
+        Button buttonMul = (Button)findViewById(R.id.buttonMul);
+        buttonMul.setOnClickListener(this);
+        Button buttonDiv = (Button)findViewById(R.id.buttonDiv);
+        buttonDiv.setOnClickListener(this);
+
+        Button buttonEqual = (Button)findViewById(R.id.buttonDiv);
+        buttonEqual.setOnClickListener(this);
+        Button buttonClear = (Button)findViewById(R.id.buttonClear);
+        buttonClear.setOnClickListener(this);
 
         numberView = (TextView)findViewById(R.id.textView);
     }
@@ -63,6 +68,7 @@ public class Calculator extends Activity implements View.OnClickListener {
             case R.id.buttonEqual:
                 break;
             case R.id.buttonClear:
+                clearTextView();
                 break;
             default:
                 String recentNumber = numberView.getText().toString();
@@ -73,6 +79,9 @@ public class Calculator extends Activity implements View.OnClickListener {
                 numberView.setText(recentNumber);
                 break;
         }
+    }
 
+    public void clearTextView() {
+        numberView.setText("0");
     }
 }

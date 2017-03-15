@@ -19,10 +19,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.*;
 
 /**
- * Instrumentation test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * Created by Gerd on 15.03.2017.
  */
+
 @RunWith(AndroidJUnit4.class)
 public class CalculatorInstrumentedTest {
     @Test
@@ -59,5 +58,13 @@ public class CalculatorInstrumentedTest {
         }
 
         onView(withText("9876543210")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testClearButton() {
+        onView(withText("3")).perform(click());
+        onView(withText("C")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("0")));
     }
 }
