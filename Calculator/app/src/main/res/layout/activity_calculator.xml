@@ -121,8 +121,5 @@
                 android:layout_height="80dip"
                 android:text="/" />
         </TableRow>
-
     </TableLayout>
-
-
 </android.support.constraint.ConstraintLayout>
