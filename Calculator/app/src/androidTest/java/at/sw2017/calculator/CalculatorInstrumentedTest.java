@@ -35,6 +35,7 @@ public class CalculatorInstrumentedTest {
     @Rule
     public ActivityTestRule<Calculator> mActivityRule = new
             ActivityTestRule<>(Calculator.class);
+
     @Test
     public void testButtons() throws Exception {
         onView(withId(R.id.button0)).perform(click());
@@ -66,5 +67,72 @@ public class CalculatorInstrumentedTest {
         onView(withText("C")).perform(click());
 
         onView(withId(R.id.textView)).check(matches(withText("0")));
+    }
+
+    @Test
+    public void testAddition() {
+        onView(withText("2")).perform(click());
+        onView(withText("+")).perform(click());
+        onView(withText("3")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("5")));
+    }
+    @Test
+    public void testSubtraction() {
+        onView(withText("3")).perform(click());
+        onView(withText("-")).perform(click());
+        onView(withText("2")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("1")));
+
+        onView(withText("C")).perform(click());
+        onView(withText("2")).perform(click());
+        onView(withText("-")).perform(click());
+        onView(withText("3")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("-1")));
+    }
+
+    @Test
+    public void testMultiplication() {
+        onView(withText("2")).perform(click());
+        onView(withText("*")).perform(click());
+        onView(withText("3")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("6")));
+
+        onView(withText("*")).perform(click());
+        onView(withText("0")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("0")));
+    }
+
+    @Test
+    public void testDivision() {
+        onView(withText("3")).perform(click());
+        onView(withText("/")).perform(click());
+        onView(withText("2")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("1")));
+
+        onView(withText("/")).perform(click());
+        onView(withText("0")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("0")));
+    }
+
+    @Test
+    public void testWrongState() {
+        onView(withText("3")).perform(click());
+        onView(withText("=")).perform(click());
+
+        onView(withId(R.id.textView)).check(matches(withText("3")));
     }
 }
