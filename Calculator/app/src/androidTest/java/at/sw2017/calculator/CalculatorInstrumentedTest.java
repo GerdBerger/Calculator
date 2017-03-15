@@ -14,6 +14,7 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.*;
 
@@ -37,9 +38,12 @@ public class CalculatorInstrumentedTest {
             ActivityTestRule<>(Calculator.class);
     @Test
     public void testButtons() throws Exception {
-        for (int i = 0; i <= 9; i++) {
+        onView(withId(R.id.button0)).perform(click());
+
+        for (int i = 1; i <= 9; i++) {
             onView(withText(Integer.toString(i))).perform(click());
         }
+
         onView(withText("+")).perform(click());
         onView(withText("-")).perform(click());
         onView(withText("*")).perform(click());

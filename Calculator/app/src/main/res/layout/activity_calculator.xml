@@ -17,7 +17,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:text="" />
+                android:text="0" />
         </TableRow>
 
         <TableRow>
