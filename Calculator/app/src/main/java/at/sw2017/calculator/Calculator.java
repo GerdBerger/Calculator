@@ -95,6 +95,9 @@ public class Calculator extends Activity implements View.OnClickListener {
                     recentNumber = "";
                     state = State.NUM;
                 }
+                if (recentNumber.equals("0")) {
+                    recentNumber = "";
+                }
                 recentNumber += clickButton.getText().toString();
                 numberView.setText(recentNumber);
         }

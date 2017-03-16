@@ -46,11 +46,12 @@
                 android:text="+" />
         </TableRow>
 
-        <TableRow><Button
-            android:id="@+id/button4"
-            android:layout_width="80dip"
-            android:layout_height="80dip"
-            android:text="4" />
+        <TableRow>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:text="4" />
 
             <Button
                 android:id="@+id/button5"
